@@ -1,0 +1,26 @@
+{
+  "title": "ローマ字タイピング",
+  "desc": "60秒のあいだに、表示された言葉をローマ字で打とう。\nミスなしで打てた言葉が続くほど、長い言葉が出やすくなります。",
+  "resultTitle": "おつかれさま！",
+  "theme": "blue",
+  "font": "",
+  "hideRomaji": false,
+  "background": "",
+  "time": 60,
+  "timeBonus": 0,
+  "missScorePenalty": 0,
+  "missTimePenalty": 0,
+  "maxMiss": 0,
+  "easyWords": 4,
+  "recentExclude": 8,
+  "scorePerLevel": {
+    "1": 10,
+    "2": 10,
+    "3": 10,
+    "4": 20
+  },
+  "comboBonusEvery": 5,
+  "comboBonus": 5,
+  "shareUrl": "",
+  "shareText": "ローマ字タイピングで{score}点！（{done}語・正確さ{accuracy}%・最大{maxCombo}連続）"
+}

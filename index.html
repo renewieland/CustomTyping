@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ローマ字タイピング</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <section id="start" class="card">
+      <h1 id="title">ローマ字タイピング</h1>
+      <p id="desc" class="desc">60秒のあいだに、表示された言葉をローマ字で打とう。<br>ミスなしで打てた言葉が続くほど、長い言葉が出やすくなります。</p>
+      <p>ベストスコア：<strong id="best">0</strong></p>
+      <button id="go">スタート（Enter）</button>
+    </section>
+
+    <section id="play" class="card hidden">
+      <div class="hud">
+        <div><span>残り</span><b id="time">60</b></div>
+        <div><span>連続</span><b id="combo">0</b></div>
+        <div id="missBox" class="hidden"><span>ミス</span><b id="missCount">0</b></div>
+        <div><span>スコア</span><b id="score">0</b></div>
+      </div>
+      <div class="bar"><i id="bar"></i></div>
+      <div class="kana" id="kana"></div>
+      <div class="romaji" id="romaji" aria-live="off"></div>
+      <div class="combo" id="msg"></div>
+      <div class="hint">Esc でリスタート</div>
+    </section>
+
+    <section id="end" class="card hidden">
+      <h1 id="resultTitle">おつかれさま！</h1>
+      <div class="res">
+        <div><b id="rScore">0</b><span>スコア</span></div>
+        <div><b id="rKpm">0</b><span>1分あたりの打鍵数</span></div>
+        <div><b id="rAcc">0%</b><span>正確さ</span></div>
+        <div><b id="rWords">0</b><span>打てた言葉</span></div>
+      </div>
+      <p id="rBest"></p>
+      <div class="acts">
+        <button id="again">もう一回（Enter）</button>
+        <a id="share" class="btn2" href="#" target="_blank" rel="noopener noreferrer">Xで共有</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+
+</html>

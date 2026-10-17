@@ -1,0 +1,290 @@
+:root {
+  box-sizing: border-box;
+  color-scheme: light;
+  --font: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --bg: #f5f8fc;
+  --panel: #fff;
+  --ink: #2f3a47;
+  --sub: #8794a6;
+  --accent: #6b8ba9;
+  --accent-ink: #fff;
+  --ok: #3a5b7c;
+  --ng: #d0808a;
+  --line: #e7edf4;
+  --g1: #fdfeff;
+  --g2: #eef3f9;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* テーマ色（setting.json の "theme" で切り替え）。blue は上の :root の値 */
+:root[data-theme="green"] {
+  --bg: #f4faf6;
+  --ink: #2e3d35;
+  --sub: #84998b;
+  --accent: #5f9a7a;
+  --accent-ink: #fff;
+  --ok: #2f6b4d;
+  --ng: #d0808a;
+  --line: #e3efe7;
+  --g1: #fcfffd;
+  --g2: #ecf6ef
+}
+
+:root[data-theme="yellow"] {
+  --bg: #fdfaf0;
+  --ink: #3d3826;
+  --sub: #9a937a;
+  --accent: #e3b73b;
+  --accent-ink: #3d3826;
+  --ok: #8a6d0b;
+  --ng: #d0808a;
+  --line: #f1ead2;
+  --g1: #fffefa;
+  --g2: #faf3dc
+}
+
+:root[data-theme="red"] {
+  --bg: #fcf5f5;
+  --ink: #3d2c2e;
+  --sub: #9b8587;
+  --accent: #c2616a;
+  --accent-ink: #fff;
+  --ok: #9a3a44;
+  --ng: #7f8ea3;
+  --line: #f1e2e3;
+  --g1: #fffafa;
+  --g2: #f8e9ea
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0
+}
+
+body {
+  background: linear-gradient(180deg, var(--g1) 0%, var(--g2) 100%) center/cover no-repeat;
+  color: var(--ink);
+  font-family: var(--font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px
+}
+
+main {
+  width: 100%;
+  max-width: 380px
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 20px 18px;
+  text-align: center
+}
+
+h1 {
+  font-size: 20px;
+  font-weight: 500;
+  margin: 0 0 8px;
+  letter-spacing: .12em
+}
+
+p {
+  color: var(--sub);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 0 0 14px
+}
+
+button {
+  font: inherit;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: .06em;
+  background: var(--accent);
+  color: var(--accent-ink);
+  border: 0;
+  border-radius: 8px;
+  padding: 10px 24px;
+  cursor: pointer
+}
+
+button:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px
+}
+
+.hud {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 10px
+}
+
+.hud span {
+  color: var(--sub);
+  font-weight: 500;
+  font-size: 13px;
+  margin-right: 6px
+}
+
+.bar {
+  height: 2px;
+  background: var(--line);
+  overflow: hidden;
+  margin-bottom: 20px
+}
+
+.bar i {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: var(--accent);
+  transform-origin: left;
+  will-change: transform
+}
+
+.bar i.low {
+  background: var(--ng)
+}
+
+.kana {
+  font-size: clamp(24px, 7vw, 30px);
+  font-weight: 500;
+  margin: 4px 0 10px;
+  word-break: keep-all;
+  white-space: nowrap
+}
+
+.romaji {
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: .18em;
+  white-space: nowrap;
+  min-height: 1.4em;
+  font-variant-ligatures: none
+}
+
+.romaji .d {
+  color: var(--ok)
+}
+
+.romaji .n {
+  color: var(--sub);
+  opacity: .75
+}
+
+.romaji .c {
+  border-bottom: 2px solid var(--accent)
+}
+
+.shake {
+  animation: sh .18s
+}
+
+@keyframes sh {
+  25% {
+    transform: translateX(-6px)
+  }
+
+  75% {
+    transform: translateX(6px)
+  }
+}
+
+.combo {
+  height: 1.5em;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--sub);
+  letter-spacing: .1em
+}
+
+.res {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 14px 0 16px
+}
+
+.res div {
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 10px
+}
+
+.res b {
+  display: block;
+  font-size: 20px;
+  font-weight: 500
+}
+
+.res span {
+  font-size: 11px;
+  color: var(--sub)
+}
+
+.acts {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap
+}
+
+.btn2 {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: .06em;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 10px 24px;
+  background: var(--panel)
+}
+
+.btn2:hover {
+  background: var(--bg)
+}
+
+.btn2:focus-visible {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px
+}
+
+.hidden {
+  display: none
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .shake {
+    animation: none
+  }
+
+  .bar i {
+    transition: none
+  }
+}
+
+.desc {
+  white-space: pre-line
+}
+
+.hint {
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--sub);
+  opacity: .7
+}
